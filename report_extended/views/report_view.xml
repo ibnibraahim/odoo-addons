@@ -1,21 +1,7 @@
 <?xml version="1.0"?>
 <openerp>
     <data>
-        <template id="report_extended.html_container" inherit_id="report.layout" name="Extended Base Report">
-            <xpath expr="//head" position="inside">
-                <style type="text/css">
-                    .background_image {
-                        position: absolute;
-                        z-index: -100;
-                        top: 0;
-                    }
-                    .background_image img {
-                        width: 991px;
-                        height: 1300px;
-                    }
-                </style>
-            </xpath>
-        </template>
+
 
         <record id="act_report_extended_xml_view" model="ir.ui.view">
             <field name="name">ir.actions.report.extended.xml</field>
@@ -25,11 +11,13 @@
                 <form>
                     <field name="id" invisible="1"/>
                 </form>
-                <field name="report_rml" position="after">
-                    <field name="sequence"/>
-                    <field name="company_id" groups="base.group_multi_company"/>
-                </field>
                 <notebook>
+                    <page string="General">
+                        <group>
+                            <field name="sequence"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                        </group>
+                    </page>
                     <page string="Key Lines">
                         <field name="line_ids" attrs="{'readonly':[('id','=',False)]}">
                             <tree editable="top">
@@ -126,13 +114,13 @@
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
         </record>
-        
-        <menuitem
+        <!-- En la sasa-2 deberia ir en otro lugar -->
+<!--         <menuitem
             id="report_configuration_defaults_menu"
             action="action_report_configuration_defaults"
             name="Report Default Keys"
             parent="report.reporting_menuitem"
-            sequence="30" />
+            sequence="30" /> -->
             
     </data>
 </openerp>

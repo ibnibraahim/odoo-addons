@@ -35,7 +35,7 @@ The parser proved a serie of fields an functions to use in the odt:
     'images': [
     ],
     'depends': [
-        'report',
+        'base',
     ],
     'data': [
         'views/company_view.xml',
