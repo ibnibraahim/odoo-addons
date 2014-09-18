@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
-from openerp import api, fields, models
+from openerp.osv import fields, osv
 
-class res_company(models.Model):
+class res_company(osv.osv):
     _inherit = 'res.company'
 
-    sale_order_dummy_confirm = fields.Boolean('Sale Orders Dummy Confirmation')
+    _columns = {
+        'sale_order_dummy_confirm' : fields.boolean('Sale Orders Dummy Confirmation'),
+        }

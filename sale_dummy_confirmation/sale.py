@@ -1,10 +1,15 @@
 # -*- coding: utf-8 -*-
-from openerp import api, fields, models, _
+from openerp.osv import fields, osv
+from openerp.tools.translate import _
 
-class sale_order(models.Model):
+class sale_order(osv.osv):
     _inherit = 'sale.order'
 
-    dummy_confirmation = fields.Boolean('Dummy Confirmation', help="If true, this sale order has been dummy confirmed and can go back to draft.")
+    
+    _columns = {
+        'dummy_confirmation' : fields.boolean('Dummy Confirmation', 
+            help="If true, this sale order has been dummy confirmed and can go back to draft."),
+        }
         
     def action_button_confirm(self, cr, uid, ids, context=None):
         assert len(ids) == 1, 'This option should only be used for a single id at a time.'
