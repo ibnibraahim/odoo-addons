@@ -73,7 +73,7 @@ Los reportes que se configuran para mostrar funcionalidades son:
         #'account_check',
         #'delivery_extension',
         'report_aeroo_generator',
-        # 'l10n_ar_invoice',
+        'l10n_ar_invoice',
         #'stock_picking_print_sequence',
     ],
     'init_xml': [],
